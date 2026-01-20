@@ -1,0 +1,114 @@
+/* Vitaeon Brand Colors as CSS Variables */
+/* Source: VITAEON-02.png brand guidelines */
+
+:root {
+  /* Primary Brand Colors */
+  --vitaeon-navy-dark: 210 32% 18%;    /* #1E2D3D - Main backgrounds */
+  --vitaeon-navy: 210 29% 24%;          /* #2C3E50 - Alternate sections */
+  --vitaeon-beige: 30 23% 77%;          /* #D4C5B5 - Accents, CTAs */
+  --vitaeon-sage: 120 8% 58%;           /* #8B9A8B - Badges, icons */
+  --vitaeon-cream: 60 20% 96%;          /* #F5F5F0 - Light text, backgrounds */
+
+  /* Semantic Mappings */
+  --vitaeon-background: var(--vitaeon-navy-dark);
+  --vitaeon-foreground: var(--vitaeon-cream);
+  --vitaeon-accent: var(--vitaeon-beige);
+  --vitaeon-muted: var(--vitaeon-sage);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 6s ease-in-out infinite 3s;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px hsl(var(--vitaeon-navy-dark) / 0.3);
+}
+
+/* Vitaeon-specific utilities */
+.bg-vitaeon-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--vitaeon-navy-dark)) 0%,
+    hsl(var(--vitaeon-navy)) 50%,
+    hsl(var(--vitaeon-navy-dark)) 100%
+  );
+}
+
+.text-vitaeon-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--vitaeon-cream)) 0%,
+    hsl(var(--vitaeon-beige)) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Border utilities */
+.border-vitaeon {
+  border-color: hsl(var(--vitaeon-beige) / 0.3);
+}
+
+.border-vitaeon-accent {
+  border-color: hsl(var(--vitaeon-beige));
+}
+
+/* Container utilities for v4 */
+.container-vitaeon {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-vitaeon {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-vitaeon {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Shadow utilities for v4 cards */
+.shadow-vitaeon-card {
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-vitaeon-card-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-vitaeon-card-hover:hover {
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
