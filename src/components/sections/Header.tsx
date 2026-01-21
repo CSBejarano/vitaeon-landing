@@ -7,9 +7,8 @@ import { Button } from '@/components/ui';
 
 const navLinks = [
   { href: '#servicios', label: 'Servicios' },
-  { href: '#sintomas', label: 'Sintomas' },
-  { href: '#proceso', label: 'Proceso' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#proceso', label: 'Cómo funciona' },
+  { href: '#equipo', label: 'Equipo médico' },
 ];
 
 export function Header() {
@@ -37,27 +36,26 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a
-            href="/vitaeon"
-            className="flex items-center gap-2"
+            href="/"
             aria-label="VITAEON Clinic - Inicio"
           >
             <Image
               src="/images/vitaeon/logo.png"
               alt="VITAEON Clinic"
-              width={180}
-              height={50}
-              className="h-8 lg:h-10 w-auto"
+              width={280}
+              height={80}
+              className="h-[4.5rem] lg:h-20 w-auto"
               priority
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+          {/* Desktop Navigation - Center */}
+          <nav className="hidden lg:flex items-center gap-10" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-vitaeon-cream/80 hover:text-vitaeon-beige text-sm font-medium transition-colors duration-200"
+                className="text-vitaeon-cream/80 hover:text-vitaeon-beige text-base font-medium transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -65,28 +63,27 @@ export function Header() {
           </nav>
 
           {/* Desktop: Phone + CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-6">
             <a
-              href="tel:+34900000000"
+              href="#contacto"
               className="flex items-center gap-2 text-vitaeon-cream/80 hover:text-vitaeon-beige transition-colors duration-200"
-              aria-label="Llamar al telefono de contacto"
             >
               <Phone className="w-5 h-5" />
-              <span className="text-sm font-semibold">900 000 000</span>
+              <span className="text-base font-medium">Contacto</span>
             </a>
             <Button
               size="default"
-              className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-lg shadow-vitaeon-beige/25 hover:shadow-vitaeon-beige/40 font-semibold transition-all duration-300"
+              className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-lg shadow-vitaeon-beige/25 hover:shadow-vitaeon-beige/40 font-semibold transition-all duration-300 rounded-full px-6"
             >
-              Valoracion Gratuita
+              Solicitar Valoración
             </Button>
           </div>
 
           {/* Mobile: CTA + Menu Button */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             <Button
               size="sm"
-              className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-lg font-semibold"
+              className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-lg font-semibold rounded-full"
             >
               <Phone className="w-4 h-4 mr-1" />
               Llamar
@@ -131,16 +128,16 @@ export function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="#contacto"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 text-vitaeon-cream/80 hover:text-vitaeon-beige hover:bg-vitaeon-navy/50 rounded-lg text-base font-medium transition-colors duration-200"
+                >
+                  Contacto
+                </a>
+              </li>
             </ul>
-            <div className="mt-4 px-4">
-              <a
-                href="tel:+34900000000"
-                className="flex items-center gap-2 text-vitaeon-beige font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                <span>900 000 000</span>
-              </a>
-            </div>
           </nav>
         </div>
       </div>

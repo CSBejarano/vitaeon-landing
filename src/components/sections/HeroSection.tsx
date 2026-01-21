@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Phone, ArrowRight, Shield, Award, Clock } from 'lucide-react';
+import { Phone, ArrowRight, Award } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { Particles, BlurFade, AnimatedGradientText, NeonGradientCard, ShineBorder } from '@/components/magicui';
 
@@ -31,7 +31,7 @@ export function HeroSection() {
         size={1.5}
       />
 
-      {/* Decorative floating elements - keeping for depth */}
+      {/* Decorative floating elements */}
       <div
         className="absolute top-32 right-10 lg:right-32 h-64 w-64 lg:h-96 lg:w-96 rounded-full bg-vitaeon-beige/10 blur-3xl animate-float"
         aria-hidden="true"
@@ -42,22 +42,21 @@ export function HeroSection() {
       />
 
       <div className="max-w-vitaeon mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-32">
-        {/* Badge with BlurFade animation */}
+        {/* Subtitle */}
         <BlurFade delay={0.1} direction="down">
-          <div className="inline-flex items-center gap-2 bg-vitaeon-sage/20 text-vitaeon-sage rounded-full px-5 py-2.5 mb-10 border border-vitaeon-sage/30">
-            <Shield className="w-5 h-5" />
-            <span className="text-base font-semibold">Especialistas en TRT</span>
-          </div>
+          <p className="text-vitaeon-cream/70 text-lg sm:text-xl mb-6 tracking-wide">
+            Salud hormonal masculina con enfoque médico
+          </p>
         </BlurFade>
 
-        {/* Headline - Bigger typography with BlurFade */}
+        {/* Headline */}
         <BlurFade delay={0.2} direction="down">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-vitaeon-cream mb-8 leading-[1.1] tracking-tight max-w-4xl mx-auto">
             Restaurar el equilibrio,
             <br />
             <AnimatedGradientText
               colorFrom="#D4C4A8"
-              colorTo="#7d9a78"
+              colorTo="#C4B49E"
               className="font-bold"
             >
               no reinventarlo
@@ -74,26 +73,27 @@ export function HeroSection() {
             className="max-w-2xl mx-auto mb-16 relative"
           >
             <ShineBorder
-              shineColor={["#D4C4A8", "#7d9a78", "#D4C4A8"]}
+              shineColor={["#D4C4A8", "#C4B49E", "#D4C4A8"]}
               borderWidth={1}
               duration={10}
             />
-            <p className="text-xl sm:text-2xl text-vitaeon-cream mb-8 leading-relaxed text-center">
-              Tratamientos de Terapia de Reemplazo de Testosterona (TRT) personalizados
-              para recuperar tu energia, vitalidad y calidad de vida.
+            <p className="text-lg sm:text-xl text-vitaeon-cream/90 mb-8 leading-relaxed text-center">
+              Valoración médica individualizada de la salud hormonal masculina.
+              Cuando existe indicación clínica, tratamiento supervisado orientado a
+              mejorar síntomas y calidad de vida.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-vitaeon-lg hover:shadow-vitaeon text-lg px-10 h-16 w-full sm:w-auto font-semibold transition-all duration-300 group"
+                className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark text-base px-8 h-12 w-full sm:w-auto font-medium transition-all duration-300 group rounded-lg"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4" />
                 Valoracion Gratuita
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
-                className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark shadow-vitaeon-lg hover:shadow-vitaeon text-lg px-10 h-16 w-full sm:w-auto font-semibold transition-all duration-300"
+                className="bg-vitaeon-beige hover:bg-vitaeon-beige/90 text-vitaeon-navy-dark text-base px-8 h-12 w-full sm:w-auto font-medium transition-all duration-300 rounded-lg"
               >
                 Ver Servicios
               </Button>
@@ -101,21 +101,11 @@ export function HeroSection() {
           </NeonGradientCard>
         </BlurFade>
 
-        {/* Trust indicators with BlurFade */}
+        {/* Single trust indicator */}
         <BlurFade delay={0.5} direction="up">
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 text-vitaeon-cream/70">
-            <div className="flex items-center gap-3">
-              <Phone className="w-6 h-6 text-vitaeon-beige" />
-              <span className="text-base font-medium">Primera llamada gratis</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Award className="w-6 h-6 text-vitaeon-beige" />
-              <span className="text-base font-medium">Expertos certificados</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-vitaeon-beige" />
-              <span className="text-base font-medium">Resultados en semanas</span>
-            </div>
+          <div className="flex items-center justify-center gap-3 text-vitaeon-cream/70">
+            <Award className="w-5 h-5 text-vitaeon-beige" />
+            <span className="text-base font-medium">Primera llamada gratis</span>
           </div>
         </BlurFade>
       </div>

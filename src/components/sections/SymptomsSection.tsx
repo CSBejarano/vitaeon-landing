@@ -8,7 +8,7 @@ import { AnimatedGradientText } from '@/components/magicui';
 const symptomCategories = [
   {
     icon: Dumbbell,
-    title: 'Sintomas Fisicos',
+    title: 'Síntomas Físicos',
     color: 'text-vitaeon-beige',
     bgColor: 'bg-vitaeon-beige/20',
     borderColor: 'border-vitaeon-beige/30',
@@ -17,16 +17,16 @@ const symptomCategories = [
     glowColor: 'bg-amber-500/20',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80',
     symptoms: [
-      'Perdida de fuerza y masa muscular',
-      'Aumento del indice graso',
-      'Perdida de vello corporal',
+      'Pérdida de fuerza y masa muscular',
+      'Aumento del índice graso',
+      'Pérdida de vello corporal',
       'Fatiga persistente',
-      'Bajo rendimiento fisico',
+      'Bajo rendimiento físico',
     ],
   },
   {
     icon: Brain,
-    title: 'Sintomas Mentales',
+    title: 'Síntomas Mentales',
     color: 'text-vitaeon-sage',
     bgColor: 'bg-vitaeon-sage/20',
     borderColor: 'border-vitaeon-sage/30',
@@ -36,16 +36,16 @@ const symptomCategories = [
     image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80',
     symptoms: [
       'Fatiga mental',
-      'Depresion',
+      'Depresión',
       'Cambios de humor e irritabilidad',
       'Ansiedad',
-      'Falta de concentracion',
-      'Problemas de sueno e insomnio',
+      'Falta de concentración',
+      'Problemas de sueño e insomnio',
     ],
   },
   {
     icon: Heart,
-    title: 'Deseo Sexual',
+    title: 'Salud Sexual',
     color: 'text-rose-400',
     bgColor: 'bg-rose-500/10',
     borderColor: 'border-rose-500/20',
@@ -54,9 +54,9 @@ const symptomCategories = [
     glowColor: 'bg-rose-500/20',
     image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80',
     symptoms: [
-      'Disminucion del libido',
-      'Problemas de ereccion',
-      'Impotencia',
+      'Disminución del libido',
+      'Disfunción eréctil',
+      'Dificultad para mantener erecciones',
     ],
   },
 ];
@@ -69,17 +69,17 @@ export function SymptomsSection() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-vitaeon-beige/20 text-vitaeon-beige rounded-full px-4 py-2 mb-6 border border-vitaeon-beige/30">
             <AlertCircle className="w-4 h-4" />
-            <span className="text-sm font-semibold">Identifica los sintomas</span>
+            <span className="text-sm font-semibold">Identifica los síntomas</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-vitaeon-cream mb-6">
-            Te identificas con alguno de{' '}
+            ¿Te identificas con alguno de{' '}
             <AnimatedGradientText colorFrom="#D4C4A8" colorTo="#7d9a78" className="font-bold">
-              estos sintomas?
+              estos síntomas?
             </AnimatedGradientText>
           </h2>
           <p className="text-lg text-vitaeon-cream/70 max-w-2xl mx-auto">
-            El desequilibrio hormonal puede manifestarse de multiples formas.
-            Si experimentas varios de estos sintomas, es momento de actuar.
+            El desequilibrio hormonal puede manifestarse de múltiples formas.
+            Si experimentas varios de estos síntomas, es momento de actuar.
           </p>
         </div>
 
@@ -157,11 +157,11 @@ export function SymptomsSection() {
         {/* Bottom message */}
         <div className="mt-16 text-center">
           <p className="text-vitaeon-cream/70 text-lg mb-4">
-            Si te identificas con <span className="text-vitaeon-cream font-semibold">3 o mas sintomas</span>,
-            te recomendamos una valoracion profesional.
+            Si te identificas con <span className="text-vitaeon-cream font-semibold">3 o más síntomas</span>,
+            te recomendamos una valoración profesional.
           </p>
           <p className="text-vitaeon-beige font-semibold">
-            La primera consulta telefonica es completamente gratuita.
+            La primera consulta telefónica es completamente gratuita.
           </p>
         </div>
       </div>

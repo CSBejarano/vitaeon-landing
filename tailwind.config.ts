@@ -8,6 +8,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         manrope: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],
       },
       colors: {
         vitaeon: {

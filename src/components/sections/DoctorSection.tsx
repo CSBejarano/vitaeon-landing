@@ -6,14 +6,14 @@ import { Badge, Card, CardContent } from '@/components/ui';
 import { AnimatedGradientText } from '@/components/magicui';
 
 const credentials = [
-  { icon: Award, label: 'SEME' },
-  { icon: Building2, label: 'Colegio de Medicos' },
-  { icon: Clock, label: '+15 anos experiencia' },
+  { icon: Building2, label: "Col·legi de Metges de Tarragona" },
+  { icon: Award, label: 'Nº Colegiado: 43-07388' },
+  { icon: Clock, label: 'Medicina Familiar y Comunitaria' },
 ];
 
 export function DoctorSection() {
   return (
-    <section className="py-20 sm:py-32 bg-vitaeon-navy-dark">
+    <section id="equipo" className="py-20 sm:py-32 bg-vitaeon-navy-dark">
       <div className="max-w-vitaeon mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -35,8 +35,8 @@ export function DoctorSection() {
 
               {/* Doctor image */}
               <Image
-                src="/images/vitaeon/doctor.png"
-                alt="Dr. Antonio Garcia - Especialista en salud hormonal masculina"
+                src="/images/vitaeon/doctor-2.png"
+                alt="Dr. Eduard Cambra García - Director Médico de Vitaeon Clinic"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 420px"
@@ -50,12 +50,12 @@ export function DoctorSection() {
               <CardContent className="p-6 sm:p-8">
                 {/* Name */}
                 <h3 className="text-2xl sm:text-3xl font-bold text-vitaeon-cream mb-2">
-                  Dr. Antonio Garcia
+                  Dr. Eduard Cambra García
                 </h3>
 
                 {/* Specialty */}
                 <p className="text-lg text-vitaeon-beige font-medium mb-6">
-                  Medicina Integrativa y Salud Hormonal Masculina
+                  Director Médico · Medicina Familiar y Comunitaria
                 </p>
 
                 {/* Credentials badges */}
@@ -74,14 +74,14 @@ export function DoctorSection() {
                 {/* Bio */}
                 <div className="space-y-4 text-vitaeon-cream/80 leading-relaxed">
                   <p>
-                    Especializado en el tratamiento de reemplazo de testosterona (TRT) y
-                    optimizacion hormonal masculina. Su enfoque integrador combina la medicina
-                    basada en evidencia con un seguimiento personalizado de cada paciente.
+                    Graduado en Medicina por la Universitat Internacional de Catalunya, con título
+                    oficial de Especialista en Medicina Familiar y Comunitaria. Como Director Médico
+                    de Vitaeon Clinic, es el responsable de toda la atención sanitaria prestada.
                   </p>
                   <p>
-                    Ha ayudado a cientos de hombres a recuperar su vitalidad, energia y
-                    calidad de vida mediante protocolos de tratamiento individualizados
-                    y un acompanamiento medico continuo.
+                    Su enfoque clínico se basa en la atención individualizada, priorizando siempre
+                    el criterio médico, la seguridad del paciente y la toma de decisiones fundamentada
+                    en la evidencia científica y la práctica clínica habitual.
                   </p>
                 </div>
               </CardContent>

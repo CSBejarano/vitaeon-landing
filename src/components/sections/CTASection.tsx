@@ -5,21 +5,17 @@ import Image from 'next/image';
 import { Phone, CheckCircle, Send, User, Mail, Loader2 } from 'lucide-react';
 import { Button, Card, CardContent, Input, Label } from '@/components/ui';
 import { AnimatedGradientText } from '@/components/magicui';
-import { PhoneInput } from '@/components/ui/phone-input';
-import type { E164Number } from 'libphonenumber-js';
 
 const benefits = [
   'Sin compromiso',
   'Confidencial',
   'Expertos certificados',
-  'Resultados garantizados',
 ];
 
 export function CTASection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [phone, setPhone] = useState<E164Number | undefined>();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,10 +23,11 @@ export function CTASection() {
     setError(null);
 
     const formData = new FormData(e.currentTarget);
+    const phoneValue = formData.get('phone') as string;
 
-    // Validate phone is in E.164 format
-    if (!phone || !phone.startsWith('+')) {
-      setError('Por favor, incluye el código de país (ej: +34 para España)');
+    // Validate phone has content
+    if (!phoneValue || phoneValue.trim().length < 9) {
+      setError('Por favor, introduce un número de teléfono válido');
       setIsSubmitting(false);
       return;
     }
@@ -41,7 +38,7 @@ export function CTASection() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.get('name'),
-          phone: phone, // E.164 format from PhoneInput (e.g., +34612345678)
+          phone: phoneValue,
           email: formData.get('email') || null,
           business_slug: 'vitaeon',
         }),
@@ -210,20 +207,31 @@ export function CTASection() {
                             </div>
                           </div>
 
-                          {/* Phone field with country selector */}
+                          {/* Phone field */}
                           <div className="space-y-2">
                             <Label htmlFor="phone" className="text-vitaeon-cream/80 text-sm font-medium">
                               Teléfono
                             </Label>
-                            <PhoneInput
-                              id="phone"
-                              name="phone"
-                              value={phone}
-                              onChange={setPhone}
-                              defaultCountry="ES"
-                              placeholder="612 345 678"
-                              required
-                            />
+                            <div className="relative">
+                              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-vitaeon-cream/40" />
+                              <Input
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                required
+                                placeholder="+34 600 000 000"
+                                className="
+                                  pl-10 h-12
+                                  bg-vitaeon-navy/50
+                                  border-vitaeon-beige/20
+                                  text-vitaeon-cream
+                                  placeholder:text-vitaeon-cream/40
+                                  focus:border-vitaeon-beige/50
+                                  focus:ring-vitaeon-beige/20
+                                  transition-all duration-300
+                                "
+                              />
+                            </div>
                           </div>
 
                           {/* Email field */}
@@ -258,7 +266,7 @@ export function CTASection() {
                           type="submit"
                           disabled={isSubmitting}
                           className="
-                            w-full h-14 text-lg font-semibold
+                            w-full h-12 text-sm font-semibold
                             bg-vitaeon-beige hover:bg-vitaeon-beige/90
                             text-vitaeon-navy-dark
                             shadow-lg shadow-vitaeon-beige/25
@@ -270,13 +278,13 @@ export function CTASection() {
                         >
                           {isSubmitting ? (
                             <>
-                              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                               Enviando...
                             </>
                           ) : (
                             <>
-                              Solicitar Valoración Gratuita
-                              <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                              Solicitar Orientación Inicial Gratuita
+                              <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </>
                           )}
                         </Button>
@@ -288,11 +296,23 @@ export function CTASection() {
                           </p>
                         )}
 
-                        {/* Privacy note */}
-                        <p className="text-xs text-vitaeon-cream/50 text-center">
-                          Al enviar aceptas nuestra política de privacidad.
-                          Tus datos están seguros con nosotros.
-                        </p>
+                        {/* Privacy note with RGPD */}
+                        <div className="flex items-start gap-2 text-xs text-vitaeon-cream/50">
+                          <input
+                            type="checkbox"
+                            id="rgpd"
+                            required
+                            className="mt-0.5 rounded border-vitaeon-beige/30 bg-vitaeon-navy/50 text-vitaeon-beige focus:ring-vitaeon-beige/20"
+                          />
+                          <label htmlFor="rgpd">
+                            Acepto la política RGPD. Para obtener más información sobre nuestras prácticas de
+                            privacidad y cómo nos comprometemos a proteger y respetar tu privacidad, consulta
+                            nuestra{' '}
+                            <a href="/politica-privacidad" className="text-vitaeon-beige hover:underline">
+                              Política de privacidad
+                            </a>.
+                          </label>
+                        </div>
                       </form>
                     )}
                   </div>

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Cormorant_Garamond } from 'next/font/google';
+import { CookieBanner } from '@/components/CookieBanner';
 import './globals.css';
 import './vitaeon-theme.css';
 
@@ -8,6 +9,13 @@ const manrope = Manrope({
   display: 'swap',
   variable: '--font-manrope',
   weight: ['400', '500', '600', '700', '800'],
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -72,8 +80,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${manrope.variable} font-manrope antialiased`}>
+      <body className={`${manrope.variable} ${cormorant.variable} font-manrope antialiased`}>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
